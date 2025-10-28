@@ -7,11 +7,14 @@ const cookieParser = require("cookie-parser");
 const rateLimit = require("express-rate-limit");
 const csrf = require("csurf");
 const morgan = require("morgan");
-const mongoSanitize = require("mongo-sanitize");
 const xss = require("xss-clean");
 const session = require("express-session");
 const MongoStore = require("connect-mongo");
 require("dotenv").config();
+const { Server } = require("socket.io")
+const http = require("http")
+
+const socketHandler = require("./socket/index")
 
 // const conditionalRateLimit = require("./middlewares/conditionalRateLimit");
 
@@ -22,6 +25,17 @@ require("dotenv").config();
 // ---------------------- END of Importing Routes
 
 const app = express();
+
+const server = http.createServer(app)
+
+const io = new Server(server, {
+    cors: {
+        origin: process.env.FRONTEND_URL,
+        methods: ["GET", "POST"]
+    },
+})
+
+socketHandler(io);
 
 // ===== Middleware Setup =====
 
