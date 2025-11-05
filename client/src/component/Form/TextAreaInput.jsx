@@ -1,5 +1,4 @@
-// TextAreaInput.jsx
-import React from 'react';
+import React from "react";
 
 const TextAreaInput = ({
     label,
@@ -7,7 +6,7 @@ const TextAreaInput = ({
     rows = 4,
     value,
     onChange,
-    placeholder = '',
+    placeholder = "",
     required = false,
 }) => {
     return (
@@ -25,9 +24,14 @@ const TextAreaInput = ({
                 onChange={onChange}
                 required={required}
                 placeholder={placeholder}
-                className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-white text-gray-900 
-                           placeholder-gray-400 shadow-sm focus:outline-none focus:border-orange-500 
-                           focus:ring-2 focus:ring-orange-400 transition duration-200 resize-none"
+                className="w-full px-4 py-3 rounded-xl border border-blue-200 bg-white text-gray-900 
+                           placeholder-gray-400 shadow-sm focus:outline-none focus:border-blue-500 
+                           focus:ring-2 focus:ring-blue-400 transition duration-200 resize-none"
+                style={{
+                    backgroundImage:
+                        "url('data:image/svg+xml;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQIHWP4//8/AwAI/AL+hw8bUQAAAABJRU5ErkJggg==')",
+                    backgroundColor: "#f9fbff",
+                }}
             />
         </div>
     );
