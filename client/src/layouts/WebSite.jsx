@@ -7,9 +7,9 @@ const WebSite = () => {
     return (
         <div className="relative">
             {/* Navigation stays on top */}
-            <div className="fixed top-0 left-0 w-full z-50">
+            {/* <div className="fixed top-0 left-0 w-full z-50">
                 <WebNav />
-            </div>
+            </div> */}
 
             {/* Page content */}
             <div className="relative z-0">
